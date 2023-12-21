@@ -17,49 +17,42 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-i {
+/* i {
+ 
+  display: inline-block;
+  transition: ease-in-out;
+} */
+
+.parole i {
+  display: inline;
   color: blue;
   font-weight: bold;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-@keyframes changeText {
-  0%,
-  20% {
-    content: "interfacce web";
-  }
-  30%,
-  50% {
-    content: "single page app";
-  }
-  90%,
-  100% {
-    content: "app native";
-  }
+  animation: appare 5s infinite;
+  margin: 0.3rem;
 }
 
 .parole {
-  position: relative;
-  display: inline-block;
-  color: blue;
-  font-weight: bold;
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 25px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transition: all 0.5s;
-  overflow: clip;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 5px;
+  height: 30px;
+  overflow: hidden;
 }
 
-.parole::after {
-  content: "Questo è il finale della prima frase.";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  white-space: nowrap;
-  animation: changeText 12s infinite;
+@keyframes appare {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-35px);
+  }
+  50% {
+    transform: translateY(-73px);
+  }
+  75% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
