@@ -8,3 +8,58 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+body {
+  display: inline-block;
+  margin: 5rem;
+  padding: 5rem;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+i {
+  color: blue;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes changeText {
+  0%,
+  20% {
+    content: "interfacce web";
+  }
+  30%,
+  50% {
+    content: "single page app";
+  }
+  90%,
+  100% {
+    content: "app native";
+  }
+}
+
+.parole {
+  position: relative;
+  display: inline-block;
+  color: blue;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: all 0.5s;
+  overflow: clip;
+}
+
+.parole::after {
+  content: "Questo è il finale della prima frase.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  white-space: nowrap;
+  animation: changeText 12s infinite;
+}
