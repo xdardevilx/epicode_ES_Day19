@@ -27,7 +27,7 @@ body {
   display: inline;
   color: blue;
   font-weight: bold;
-  animation: appare 5s infinite;
+  animation: appare 10s infinite;
   margin: 0.3rem;
 }
 
